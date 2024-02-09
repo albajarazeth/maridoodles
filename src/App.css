@@ -1,38 +1,164 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+}
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heart-icon {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.main-img {
+  width: 10rem;
+  border-radius: 20px;
+}
+.second-img {
+  width: 30rem;
+  border-radius: 20px;
+}
+.third-image {
+  width: 30%;
+  border-radius: 20px;
+}
+.btn {
+  padding: 20px 40px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-yes {
+  background-color: #ffb5b5;
+}
+.btn-no {
+  background-color: #407088;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+/* HEARTS */
+.floating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heart-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  margin: 1rem;
 }
 
-@keyframes App-logo-spin {
+.heart {
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 5px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+.heart-one {
+  position: relative;
+  left: 10rem;
+  margin-top: 10rem;
+}
+.heart-two {
+  position: relative;
+  right: 10rem;
+}
+.top-to-bottom {
+  bottom: 0;
+  animation: floatUp 2s ease-out forwards;
+}
+
+.bottom-to-top {
+  top: 0;
+  animation: floatDown 2s ease-out forwards;
+}
+@media (max-width: 600px) {
+  /* Adjust the threshold width as needed */
+  .top-to-bottom,
+  .bottom-to-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes floatUp {
   from {
-    transform: rotate(0deg);
+    bottom: 100vh;
   }
   to {
-    transform: rotate(360deg);
+    bottom: 0;
   }
+}
+
+@keyframes floatDown {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* NO MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.close-btn {
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  padding: 20px 10px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: #ffb5b5;
+}
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
