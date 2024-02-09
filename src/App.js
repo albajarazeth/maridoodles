@@ -34,9 +34,9 @@ function App() {
     return (
       <>
         <header className="app-header">
-          <FaRegHeart className="heart" size={30} />
+          <FaRegHeart className="heart-icon" size={30} />
           <h1>Amazing</h1>
-          <FaRegHeart className="heart" size={30} />
+          <FaRegHeart className="heart-icon" size={30} />
         </header>
         <img className="second-img" src={MilkMocha} />
       </>
